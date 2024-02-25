@@ -1,0 +1,21 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(æ¨ÛÁıÿÿÿÿ8¹ß ŠŞ1
+K
+java:S3740"/Provide the parametrized type for this generic.(“íŠa8ºß ŠŞ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ãü…İûÿÿÿÿ8ºß ŠŞ1
+‡
+java:S1192"jDefine a constant instead of duplicating this literal "Pagination list is empty. Nothing to show" 3 times.(½ú±†8’÷Ê½İ1
+s
+java:S1104"QMake lists a static final constant or non-public and provide accessors if needed.(æ¨ÛÁıÿÿÿÿ8‘¦ñ¼İ1
+t
+java:S1104"WMake currentPage a static final constant or non-public and provide accessors if needed.(¢²ÌÂ8¢Öğ¼İ1
+G	java:S106"+Replace this use of System.out by a logger.(öÏëñ8›÷Ê½İ1
+G	java:S106"+Replace this use of System.out by a logger.(½ú±†8›÷Ê½İ1
+G	java:S106$"+Replace this use of System.out by a logger.(½ú±†8œ÷Ê½İ1
+G	java:S106,"+Replace this use of System.out by a logger.(½ú±†8œ÷Ê½İ1
+L	java:S1065"+Replace this use of System.out by a logger.(íİ­¯úÿÿÿÿ8÷Ê½İ1
+G	java:S1068"+Replace this use of System.out by a logger.(ÆŸØ8÷Ê½İ1
+G	java:S106A"+Replace this use of System.out by a logger.(¢ÎŠ8÷Ê½İ1
+G	java:S106D"+Replace this use of System.out by a logger.(ÆŸØ8÷Ê½İ1

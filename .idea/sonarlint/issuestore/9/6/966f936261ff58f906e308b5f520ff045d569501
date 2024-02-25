@@ -1,0 +1,6 @@
+
+L	java:S106	"+Replace this use of System.out by a logger.(µÏ…èùÿÿÿÿ8Ã¤µ·Ý1
+Y
+java:S2440"7Remove this instantiation of "VerificadorSolapamiento".(ô£®åýÿÿÿÿ8´Ø„¾Ý1
+R
+java:S2209"5Change this instance-reference to a static reference.(È‡Ð£8¾Ø„¾Ý1
