@@ -7,6 +7,7 @@ public class PaginationManager {
         Pagination pagination = new Pagination();
         Scanner scanner = new Scanner(System.in);
         String command;
+        int pageSize = 0;
 
         // Welcome message
         System.out.println(" ");
@@ -17,7 +18,8 @@ public class PaginationManager {
         while (true) {
             // Menu
             System.out.println("Menu:");
-            System.out.println("  add <size>      : Create a new page with a specified size");
+            System.out.println("  addFirst<size>      : Create a new page with a specified size");
+            System.out.println("  add            : Create a new page with a specified size");
             System.out.println("  first          : Go to the first page");
             System.out.println("  last           : Go to the last page");
             System.out.println("  next           : Go to the next page");
@@ -33,9 +35,35 @@ public class PaginationManager {
             command = scanner.nextLine();
             String[] parts = command.split(" ");
             switch (parts[0]) {
-                case "add":
+                case "addFirst":
                     // Create a new page with a specified size
-                    int pageSize = Integer.parseInt(parts[1]);
+                    pageSize = Integer.parseInt(parts[1]); // Assign value to pageSize
+                    PaginatedElements firstPage = new PaginatedElements(pageSize);
+                    pagination.addPaginatedElements(firstPage);
+
+                    // Add elements to the new page
+                    for (int i = 0; i < pageSize; i++) {
+                        System.out.println("Enter element to add:");
+                        String input = scanner.nextLine();
+                        if (input.equals("menu")) {
+                            break; // Return to the menu
+                        } else {
+                            firstPage.addElement(input);
+                            // Check if the page array is full
+                            if (firstPage.isFull()) {
+                                System.out.println("Page is full. Returning to the menu.");
+                                System.out.println(" ");
+                                break;
+                            }
+                        }
+                    }
+                    break;
+
+                case "add":
+                    if (pageSize == 0) {
+                        System.out.println("Please use 'addFirst' command to specify page size first.");
+                        break;
+                    }
                     PaginatedElements newPage = new PaginatedElements(pageSize);
                     pagination.addPaginatedElements(newPage);
 
@@ -56,6 +84,7 @@ public class PaginationManager {
                         }
                     }
                     break;
+
                 case "first":
                     // Go to the first page
                     System.out.println(" ");
