@@ -17,3 +17,11 @@ j
 :src/main/java/org/example/exercise2/PaginatedElements.java,0\d\0defe904a7867c5167d42df59c80142bd1f2698e
 j
 :src/main/java/org/example/exercise2/PaginationManager.java,3\5\35ff29c1b3d21c3fcdc1b81e6a3f03fc3951798e
+^
+.src/main/java/org/example/exercise3/Drone.java,0\0\00765c145efe269316338346e31d5c91c6817eae
+a
+1src/main/java/org/example/exercise3/Location.java,5\8\5816e727452812a03d1fe02d7eaaa077a0edd732
+a
+1src/main/java/org/example/exercise3/Delivery.java,2\3\23eb07da82f3c96e1e36c79c071689914605cf75
+l
+<src/main/java/org/example/exercise3/DroneDeliverySystem.java,3\f\3f81abbd2063638f7c4da6eb3506f0d4f2a58d3f
