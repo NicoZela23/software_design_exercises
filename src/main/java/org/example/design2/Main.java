@@ -5,7 +5,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<Student> students = new CombinedSorter().combinedSort("name age", new StudentGenerator().generateStudents());
+        List<Student> students = new CombinedSorter().combinedSort("name age grade", new StudentGenerator().generateStudents());
 
         for (Student student : students){
             System.out.println(student.toString());
