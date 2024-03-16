@@ -2,38 +2,30 @@ package org.example.design2;
 
 import java.util.*;
 
-public class CombinedSorter implements SortStrategy{
-    private Map<String, SortStrategy> sortingStrategies;
-    private List<Student> students;
-
+public class CombinedSorter implements ISorter {
+    private final ISorter nameSorter;
+    private final ISorter numericSorter;
 
     public CombinedSorter() {
-        sortingStrategies = new HashMap<>();
-        sortingStrategies.put("name", new SortByName());
-        sortingStrategies.put("age", new SortByNumericAttribute(Comparator.comparing(Student::getAge)));
-        sortingStrategies.put("grade", new SortByNumericAttribute(Comparator.comparing(Student::getGrade)));
+        this.nameSorter = new SortByName();
+        this.numericSorter = new SortByName();
     }
-
     @Override
-    public List<Student> sort(List<Student> students) {
-        return students;
+    public List<Student> sort(List<Student> list) {
+        List<Student> sortedByName = nameSorter.sort(list);
+        return sortCombined(sortedByName);
     }
-
-    public List<Student> combinedSort(String input, List<Student> students) {
-        String[] criteria = input.split("\\s+");
-        List<SortStrategy> strategies = new ArrayList<>();
-
-        for (String criterion : criteria) {
-            SortStrategy strategy = sortingStrategies.get(criterion.toLowerCase());
-            if (strategy != null) {
-                strategies.add(strategy);
+    private List<Student> sortCombined(List<Student> students) {
+        int i = 0;
+        while (i < students.size()) {
+            int j = i + 1;
+            while (j < students.size() && students.get(j).getName().equals(students.get(i).getName())) {
+                j++;
             }
+            List<Student> subList = students.subList(i, j);
+            numericSorter.sort(subList);
+            i = j;
         }
-        List<Student> sortedStudents = new ArrayList<>(students);
-        for (SortStrategy strategy : strategies) {
-            sortedStudents = strategy.sort(sortedStudents);
-        }
-
-        return sortedStudents;
+        return students;
     }
 }

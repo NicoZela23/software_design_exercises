@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SortByNumericAttribute implements SortStrategy {
+public class SortByNumericAttribute implements ISorter {
 
     private final Comparator<Student> comparator;
 
